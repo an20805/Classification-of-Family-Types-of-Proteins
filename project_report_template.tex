@@ -1,0 +1,136 @@
+
+\documentclass[11pt]{article}
+\usepackage[a4paper,left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath,mathtools}
+\usepackage{relsize} 
+\usepackage{epsfig,graphicx}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\title{\textbf{Gievn Title of The Project}}  
+\author{}
+\date{\begin{tabular}{l@{\hskip 1cm}l@{\hskip 1cm}l}
+& Name:        & \textbf{Full Name} \\
+& Registration No./Roll No.:   & 12345 \\
+& Institute/University Name:     & IISER Bhopal \\
+& Program/Stream: & e.g., DSE        \\
+& Problem Release date: & February 02, 2022     \\
+& Date of Submission: & The date you submitted \\
+\end{tabular} }
+
+\begin{document} 
+\maketitle 
+
+\section{Introduction}
+This section should address the problem, description of the given dataset followed by the the plan of actions and your insights about the results in brief. You may explain the characteristics of the data with graphical plots, if required, e.g., Figure \ref{fig1}.
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=2.5in,height=1.5in]{example_data_plot.png} 
+\caption{Overview of Data Set}\label{fig1}
+\end{figure}
+
+\section{Methods}
+Explain the proposed methods in detail and write different methods that you have explored for experimental analysis in brief and with proper references \cite{kowsari19}. However, no need to write the existing method (e.g., SVM, k-means etc.) in detail. 
+
+Discuss the idea of parameter tuning with proper references \cite{hastie_book,bergstra11}. You may also refer about other experimental settings here e.g., the tools\footnote{\textcolor{blue}{\href{https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html\#sklearn.svm.SVC}{https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html\#sklearn.svm.SVC}}} used to implement the classifiers \cite{burges98,witten_book}. 
+
+\section{Experimental Setup}
+State different evaluation criteria e.g., precision, recall etc. that are used to evaluate various models. Mention significant parameters or hyper-parameters of the state of the arts which needs to be tuned, if necessary. The libraries used to implement different models may be noted here. Ideally this section and methods section should not be more than one and half pages long individually. 
+
+\begin{table}
+\centering
+\caption{Performance Of Different Classifiers Using All Features} \label{table1}
+\vspace{0.3cm}
+\begin{tabular}{|c|c|c|c|}
+\hline  Classifier  & Precision  &Recall &F-measure\\
+\hline   Adaptive Boosting &    &     & \\
+\hline   Decision Tree     &    &   & \\
+\hline   K-Nearest Neighbor     &    &   & \\
+\hline   Logistic Regression &0.26 &0.35 & \\
+\hline   Random Forest      &   &   & \\
+\hline   Support Vector Machine &    &     & \\
+\hline
+\end{tabular}
+\end{table}
+
+% Confusion Matrices
+\begin{table}
+\begin{center}
+\caption{Confusion Matrices of Different Classifiers}\label{table2}
+\vspace{0.4cm}
+%Confusion Matrix of AB  
+\begin{tabular}{c|ccc}
+\cline{2-4} &Actual	&\multicolumn{2}{|c|}{Predicted Class}  \\
+\cline{3-4} 		&Class		&\multicolumn{1}{|c}{Spam}	&\multicolumn{1}{c|}{Ham}  \\
+\cline{2-4} 	&Spam	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+&Ham	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+\cline{2-4} \multicolumn{1}{c}{}  &\multicolumn{1}{c}{ } &\multicolumn{2}{c}{Adaptive Boosting}    \\
+\multicolumn{4}{c}{}
+\end{tabular}
+%Confusion Matrix of DT  
+\begin{tabular}{c|ccc}
+\cline{2-4} &Actual	&\multicolumn{2}{|c|}{Predicted Class}  \\
+\cline{3-4} 		&Class		&\multicolumn{1}{|c}{Spam}	&\multicolumn{1}{c|}{Ham}  \\
+\cline{2-4} 	&Spam	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+&Ham	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+\cline{2-4} \multicolumn{1}{c}{}  &\multicolumn{1}{c}{ } &\multicolumn{2}{c}{Decision Tree}    \\
+\multicolumn{4}{c}{}
+\end{tabular}
+%Confusion Matrix of KNN  
+\begin{tabular}{c|ccc}
+\cline{2-4} &Actual	&\multicolumn{2}{|c|}{Predicted Class}  \\
+\cline{3-4} 		&Class		&\multicolumn{1}{|c}{Spam}	&\multicolumn{1}{c|}{Ham}  \\
+\cline{2-4} 	&Spam	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+&Ham	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+\cline{2-4} \multicolumn{1}{c}{}  &\multicolumn{1}{c}{ } &\multicolumn{2}{c}{K-Nearest Neighbor}    \\
+\multicolumn{4}{c}{}
+\end{tabular}
+%Confusion Matrix of LR  
+\begin{tabular}{c|ccc}
+\cline{2-4} &Actual	&\multicolumn{2}{|c|}{Predicted Class}  \\
+\cline{3-4} 		&Class		&\multicolumn{1}{|c}{Spam}	&\multicolumn{1}{c|}{Ham}  \\
+\cline{2-4} 	&Spam	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+&Ham	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+\cline{2-4} \multicolumn{1}{c}{}  &\multicolumn{1}{c}{ } &\multicolumn{2}{c}{Logistic Regression}    \\
+\multicolumn{4}{c}{}
+\end{tabular}
+%Confusion Matrix of RF 
+\begin{tabular}{c|ccc}
+\cline{2-4} &Actual	&\multicolumn{2}{|c|}{Predicted Class}  \\
+\cline{3-4} 		&Class		&\multicolumn{1}{|c}{Spam}	&\multicolumn{1}{c|}{Ham}  \\
+\cline{2-4} 	&Spam	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+&Ham	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+\cline{2-4} \multicolumn{1}{c}{}  &\multicolumn{1}{c}{ } &\multicolumn{2}{c}{Random Forest}    \\
+\multicolumn{4}{c}{}
+\end{tabular}
+%Confusion Matrix of SVM 
+\begin{tabular}{c|ccc}
+\cline{2-4} &Actual	&\multicolumn{2}{|c|}{Predicted Class}  \\
+\cline{3-4} 		&Class		&\multicolumn{1}{|c}{Spam}	&\multicolumn{1}{c|}{Ham}  \\
+\cline{2-4} 	&Spam	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+&Ham	&\multicolumn{1}{|c}{ }	&\multicolumn{1}{c|}{ }	\\
+\cline{2-4} \multicolumn{1}{c}{}  &\multicolumn{1}{c}{ } &\multicolumn{2}{c}{SVM}    \\
+\multicolumn{4}{c}{}
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Results and Discussion}
+You may create different tables  e.g., Table \ref{table1}, Table2 \ref{table2}, Table \ref{table2} etc. to show the experimental results. Moreover, you should explain (in simple sentences) your observations from these tables. Therefore analyze the results based on these observations as discussed in the class.
+
+\section{Conclusion}	
+Significant findings and scopes of future works may be explained here in few sentences.
+
+ 
+\bibliographystyle{unsrt}
+\bibliography{report}
+\end{document} 
+
+
+
